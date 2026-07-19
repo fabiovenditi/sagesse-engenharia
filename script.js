@@ -53,7 +53,7 @@ if (presentation) {
   let sceneTimer;
   let narrationStart;
   const mobileAudio = window.matchMedia('(max-width: 700px)').matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const musicLevel = mobileAudio ? .005 : .08;
+  const musicLevel = mobileAudio ? .02 : .08;
   let audioContext;
   let narrationGain;
   let musicGain;
@@ -124,6 +124,7 @@ if (presentation) {
         });
         music?.play().catch(() => {});
         narrationStart = setTimeout(() => {
+          audio.currentTime = 0;
           if (mixerActive) narrationGain.gain.setTargetAtTime(1, audioContext.currentTime, .02);
           else audio.muted = false;
         }, 1000);
