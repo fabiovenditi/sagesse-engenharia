@@ -52,7 +52,7 @@ if (presentation) {
   let narrationOn = false;
   let sceneTimer;
   let narrationStart;
-  if (music) music.volume = .15;
+  if (music) music.volume = .08;
 
   const showScene = (index, speak = false) => {
     currentScene = index % scenes.length;
