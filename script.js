@@ -88,19 +88,23 @@ if (presentation) {
     play.innerHTML = narrationOn ? 'Narração ativada <span>❚❚</span>' : 'Ouvir apresentação <span>▶</span>';
     if (narrationOn) {
       if (audio) {
+        audio.pause();
         audio.currentTime = 0;
-        audio.volume = 0;
+        audio.muted = true;
         audio.play().catch(() => {
+          audio.muted = false;
           narrationStart = setTimeout(() => speakScene(scenes[currentScene].narration), 1000);
         });
         music?.play().catch(() => {});
         narrationStart = setTimeout(() => {
+          audio.muted = false;
           audio.volume = 1;
         }, 1000);
       } else speakScene(scenes[currentScene].narration);
     } else {
       clearTimeout(narrationStart);
       audio?.pause();
+      if (audio) audio.muted = false;
       music?.pause();
       window.speechSynthesis?.cancel();
     }
@@ -111,6 +115,7 @@ if (presentation) {
     clearInterval(sceneTimer);
     clearTimeout(narrationStart);
     audio?.pause();
+    if (audio) audio.muted = false;
     music?.pause();
     window.speechSynthesis?.cancel();
   }));
