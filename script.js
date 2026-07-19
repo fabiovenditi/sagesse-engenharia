@@ -34,7 +34,7 @@ if (presentation) {
     {
       title: 'Sua operação não pode parar.',
       copy: 'A Sagesse Engenharia projeta e entrega soluções elétricas industriais com segurança, organização e confiança.',
-      narration: 'Sua operação não pode parar. A Sagesse Engenharia projeta e entrega soluções elétricas industriais com segurança, organização e confiança.'
+      narration: 'Somos especialistas em soluções elétricas industriais e prediais, atuando desde o projeto até a execução, fabricação, instalação e manutenção de sistemas elétricos. Entregamos soluções com qualidade, segurança e eficiência, respeitando prazos e garantindo excelência em cada projeto. Se a sua empresa procura uma parceira confiável para executar serviços elétricos com agilidade, profissionalismo e compromisso, conte com a Sagesse Engenharia.'
     },
     {
       title: 'Método em cada detalhe.',
