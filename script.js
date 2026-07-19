@@ -52,7 +52,8 @@ if (presentation) {
   let narrationOn = false;
   let sceneTimer;
   let narrationStart;
-  if (music) music.volume = .04;
+  const mobileAudio = window.matchMedia('(max-width: 700px)').matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (music) music.volume = mobileAudio ? .01 : .04;
 
   const showScene = (index, speak = false) => {
     currentScene = index % scenes.length;
