@@ -52,7 +52,7 @@ if (presentation) {
   let narrationOn = false;
   let sceneTimer;
   let narrationStart;
-  if (music) music.volume = .08;
+  if (music) music.volume = .04;
 
   const showScene = (index, speak = false) => {
     currentScene = index % scenes.length;
@@ -88,9 +88,13 @@ if (presentation) {
     if (narrationOn) {
       if (audio) {
         audio.currentTime = 0;
+        audio.volume = 0;
+        audio.play().catch(() => {
+          narrationStart = setTimeout(() => speakScene(scenes[currentScene].narration), 1000);
+        });
         music?.play().catch(() => {});
         narrationStart = setTimeout(() => {
-          audio.play().catch(() => speakScene(scenes[currentScene].narration));
+          audio.volume = 1;
         }, 1000);
       } else speakScene(scenes[currentScene].narration);
     } else {
