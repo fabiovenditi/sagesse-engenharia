@@ -29,7 +29,6 @@ if (presentation) {
   const step = presentation.querySelector('.presentation-progress b');
   const play = presentation.querySelector('.presentation-play');
   const audio = presentation.querySelector('.presentation-audio');
-  const music = presentation.querySelector('.presentation-music');
   const closeButtons = presentation.querySelectorAll('.presentation-close, .presentation-skip');
   const scenes = [
     {
@@ -51,32 +50,6 @@ if (presentation) {
   let currentScene = 0;
   let narrationOn = false;
   let sceneTimer;
-  let narrationStart;
-  const mobileAudio = window.matchMedia('(max-width: 700px)').matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const musicLevel = mobileAudio ? 1.5 : .08;
-  let audioContext;
-  let narrationGain;
-  let musicGain;
-
-  const setupAudioMixer = () => {
-    const AudioApi = window.AudioContext || window.webkitAudioContext;
-    if (!AudioApi || !audio || !music) return false;
-    try {
-      if (!audioContext) {
-        audioContext = new AudioApi();
-        narrationGain = audioContext.createGain();
-        musicGain = audioContext.createGain();
-        audioContext.createMediaElementSource(audio).connect(narrationGain).connect(audioContext.destination);
-        audioContext.createMediaElementSource(music).connect(musicGain).connect(audioContext.destination);
-      }
-      audioContext.resume();
-      narrationGain.gain.setValueAtTime(0, audioContext.currentTime);
-      musicGain.gain.setValueAtTime(musicLevel, audioContext.currentTime);
-      return true;
-    } catch {
-      return false;
-    }
-  };
 
   const showScene = (index, speak = false) => {
     currentScene = index % scenes.length;
@@ -111,29 +84,13 @@ if (presentation) {
     play.innerHTML = narrationOn ? 'Narração ativada <span>❚❚</span>' : 'Ouvir apresentação <span>▶</span>';
     if (narrationOn) {
       if (audio) {
-        const mixerActive = setupAudioMixer();
         audio.pause();
         audio.currentTime = 0;
-        audio.muted = !mixerActive;
         audio.volume = 1;
-        if (music) music.volume = mixerActive ? 1 : musicLevel;
-        audio.play().catch(() => {
-          clearTimeout(narrationStart);
-          audio.muted = false;
-          narrationStart = setTimeout(() => speakScene(scenes[currentScene].narration), 1000);
-        });
-        music?.play().catch(() => {});
-        narrationStart = setTimeout(() => {
-          audio.currentTime = 0;
-          if (mixerActive) narrationGain.gain.setTargetAtTime(1, audioContext.currentTime, .02);
-          else audio.muted = false;
-        }, 1000);
+        audio.play().catch(() => speakScene(scenes[currentScene].narration));
       } else speakScene(scenes[currentScene].narration);
     } else {
-      clearTimeout(narrationStart);
       audio?.pause();
-      if (audio) audio.muted = false;
-      music?.pause();
       window.speechSynthesis?.cancel();
     }
   });
@@ -141,17 +98,12 @@ if (presentation) {
   closeButtons.forEach((button) => button.addEventListener('click', () => {
     presentation.classList.add('is-hidden');
     clearInterval(sceneTimer);
-    clearTimeout(narrationStart);
     audio?.pause();
-    if (audio) audio.muted = false;
-    music?.pause();
     window.speechSynthesis?.cancel();
   }));
 
   audio?.addEventListener('ended', () => {
     narrationOn = false;
-    music?.pause();
-    music && (music.currentTime = 0);
     play.setAttribute('aria-pressed', 'false');
     play.innerHTML = 'Ouvir apresentação <span>▶</span>';
   });
