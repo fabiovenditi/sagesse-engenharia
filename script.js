@@ -33,18 +33,18 @@ if (presentation) {
   const scenes = [
     {
       title: 'Sua operação não pode parar.',
-      copy: 'A Sagesse Engenharia projeta e entrega soluções elétricas industriais com segurança, organização e confiança.',
-      narration: 'Olá! Seja bem-vindo à Sagesse Engenharia. Somos especialistas em soluções elétricas industriais e prediais, atuando desde o projeto até a execução, fabricação, instalação e manutenção de sistemas elétricos. Entregamos soluções com qualidade, segurança e eficiência, respeitando prazos e garantindo excelência em cada projeto. Se a sua empresa procura uma parceira confiável para executar serviços elétricos com agilidade, profissionalismo e compromisso, conte com a Sagesse Engenharia.'
+      copy: 'Elétrica, caldeiraria e montagem industrial integradas para uma entrega mais eficiente.',
+      narration: 'Olá, seja bem-vindo à Sagesse Engenharia. Unimos engenharia elétrica, automação, caldeiraria e montagem industrial para transformar demandas complexas em entregas completas.'
     },
     {
-      title: 'Método em cada detalhe.',
-      copy: 'Painéis elétricos, instalações e infraestrutura executados para manter sua indústria sob controle.',
-      narration: 'Do projeto à fabricação, cuidamos de painéis elétricos, instalações e infraestrutura para manter sua indústria sob controle.'
+      title: 'Precisão em cada detalhe.',
+      copy: 'Painéis, infraestrutura, tubulações, estruturas e peças sob medida, do projeto à instalação.',
+      narration: 'Desenvolvemos painéis elétricos, infraestrutura, tubulações, estruturas metálicas e peças sob medida, do projeto à instalação em campo.'
     },
     {
-      title: 'Pronta para operar.',
-      copy: 'Testes, comissionamento e start-up para transformar planejamento em desempenho, com segurança.',
-      narration: 'Com testes, comissionamento e start-up, transformamos planejamento em desempenho. Sagesse Engenharia: uma parceira técnica para manter sua indústria em movimento.'
+      title: 'Pronta para avançar.',
+      copy: 'Planejamento, segurança e qualidade para transformar engenharia em resultado operacional.',
+      narration: 'Trabalhamos com planejamento, segurança e qualidade para que sua operação avance com confiança. Sagesse Engenharia. Engenharia integrada para mover a sua indústria.'
     }
   ];
   let currentScene = 0;
