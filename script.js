@@ -27,6 +27,7 @@ if (presentation) {
   const title = presentation.querySelector('#presentation-title');
   const copy = presentation.querySelector('#presentation-copy');
   const step = presentation.querySelector('.presentation-progress b');
+  const total = presentation.querySelector('.presentation-progress i');
   const play = presentation.querySelector('.presentation-play');
   const audio = presentation.querySelector('.presentation-audio');
   const closeButtons = presentation.querySelectorAll('.presentation-close, .presentation-skip');
@@ -45,11 +46,37 @@ if (presentation) {
       title: 'Pronta para avançar.',
       copy: 'Planejamento, segurança e qualidade para transformar engenharia em resultado operacional.',
       narration: 'Trabalhamos com planejamento, segurança e qualidade para que sua operação avance com confiança. Sagesse Engenharia. Engenharia integrada para mover a sua indústria.'
+    },
+    {
+      title: 'Precisão que ganha forma.',
+      copy: 'Caldeiraria industrial para fabricar tubulações, conjuntos e estruturas sob medida.',
+      narration: 'Na caldeiraria, precisão transforma projeto em estruturas, peças e tubulações prontas para operar.'
+    },
+    {
+      title: 'Soluções sob medida.',
+      copy: 'Spools, conexões, suportes e peças industriais fabricadas para a sua demanda.',
+      narration: 'Fabricamos spools, conexões, suportes e peças especiais para cada desafio industrial.'
+    },
+    {
+      title: 'Estruturas que sustentam resultado.',
+      copy: 'Bases, plataformas, suportes e infraestrutura metálica para processos mais organizados.',
+      narration: 'Criamos estruturas e suportes que levam mais organização e confiabilidade ao processo.'
+    },
+    {
+      title: 'Montagem que integra.',
+      copy: 'Elétrica e mecânica coordenadas em campo para uma entrega mais eficiente.',
+      narration: 'Em campo, elétrica e mecânica trabalham integradas para uma entrega mais eficiente.'
+    },
+    {
+      title: 'Pronta para operar.',
+      copy: 'Do levantamento técnico à entrega final, uma parceria para mover sua indústria.',
+      narration: 'Sagesse Engenharia. Da ideia à operação, uma parceira técnica para mover sua indústria.'
     }
   ];
   let currentScene = 0;
   let narrationOn = false;
   let sceneTimer;
+  total.textContent = String(scenes.length).padStart(2, '0');
 
   const showScene = (index, speak = false) => {
     currentScene = index % scenes.length;
@@ -74,7 +101,7 @@ if (presentation) {
 
   const startScenes = () => {
     clearInterval(sceneTimer);
-    sceneTimer = setInterval(() => showScene(currentScene + 1, narrationOn), 14000);
+    sceneTimer = setInterval(() => showScene(currentScene + 1, narrationOn), 6000);
   };
   startScenes();
 

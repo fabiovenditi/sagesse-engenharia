@@ -1,0 +1,2 @@
+/* Sincroniza a barra de progresso com a transição das imagens de abertura. */
+.presentation-progress span:after { animation-duration: 6s; }
