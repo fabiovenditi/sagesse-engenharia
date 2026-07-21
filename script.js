@@ -35,42 +35,42 @@ if (presentation) {
     {
       title: 'Sua operação não pode parar.',
       copy: 'Elétrica, caldeiraria e montagem industrial integradas para uma entrega mais eficiente.',
-      narration: 'Olá, seja bem-vindo à Sagesse Engenharia. Unimos engenharia elétrica, automação, caldeiraria e montagem industrial para transformar demandas complexas em entregas completas.'
+      narration: 'Bem-vindo à SAGESSE ENGENHARIA.'
     },
     {
       title: 'Precisão em cada detalhe.',
       copy: 'Painéis, infraestrutura, tubulações, estruturas e peças sob medida, do projeto à instalação.',
-      narration: 'Desenvolvemos painéis elétricos, infraestrutura, tubulações, estruturas metálicas e peças sob medida, do projeto à instalação em campo.'
+      narration: 'Somos especialistas em soluções industriais, oferecendo serviços de engenharia elétrica,'
     },
     {
       title: 'Pronta para avançar.',
       copy: 'Planejamento, segurança e qualidade para transformar engenharia em resultado operacional.',
-      narration: 'Trabalhamos com planejamento, segurança e qualidade para que sua operação avance com confiança. Sagesse Engenharia. Engenharia integrada para mover a sua indústria.'
+      narration: 'caldeiraria, montagem eletromecânica e manutenção industrial.'
     },
     {
       title: 'Precisão que ganha forma.',
       copy: 'Caldeiraria industrial para fabricar tubulações, conjuntos e estruturas sob medida.',
-      narration: 'Na caldeiraria, precisão transforma projeto em estruturas, peças e tubulações prontas para operar.'
+      narration: 'Atuamos desde a fabricação de estruturas metálicas e painéis elétricos'
     },
     {
       title: 'Soluções sob medida.',
       copy: 'Spools, conexões, suportes e peças industriais fabricadas para a sua demanda.',
-      narration: 'Fabricamos spools, conexões, suportes e peças especiais para cada desafio industrial.'
+      narration: 'até instalações, tubulações, montagens, comissionamento e manutenção de equipamentos.'
     },
     {
       title: 'Estruturas que sustentam resultado.',
       copy: 'Bases, plataformas, suportes e infraestrutura metálica para processos mais organizados.',
-      narration: 'Criamos estruturas e suportes que levam mais organização e confiabilidade ao processo.'
+      narration: 'Com qualidade, segurança e compromisso,'
     },
     {
       title: 'Montagem que integra.',
       copy: 'Elétrica e mecânica coordenadas em campo para uma entrega mais eficiente.',
-      narration: 'Em campo, elétrica e mecânica trabalham integradas para uma entrega mais eficiente.'
+      narration: 'entregamos soluções completas para impulsionar a produtividade da sua empresa.'
     },
     {
       title: 'Pronta para operar.',
       copy: 'Do levantamento técnico à entrega final, uma parceria para mover sua indústria.',
-      narration: 'Sagesse Engenharia. Da ideia à operação, uma parceira técnica para mover sua indústria.'
+      narration: 'SAGESSE ENGENHARIA. Construindo soluções para a indústria.'
     }
   ];
   let currentScene = 0;
